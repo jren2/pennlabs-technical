@@ -27,6 +27,7 @@ My frontend technical for pennlabs!
 - On this page, the user is able to rank their courses 
 - This is implemented with React Router and results in a new URL
   - Important to note here is that this does not use URL or query parameters and instead uses React Router Link state. This results in both safer links, state persistence when going between checkout and homepage, and a more readable url.
+- When the user reaches the checkout stage, they can reorder their cart and click confirm. This will result in a receipt for the user showing them a receipt of their cart.
 
 5. View cart
 - The user is able to click the cart button in the top right and view a sidebar which shows the course cart
