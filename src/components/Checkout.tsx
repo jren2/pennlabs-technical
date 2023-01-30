@@ -112,7 +112,12 @@ const Checkout = () => {
           </div>
           {/* Return to homepage button - this maintains state due to react router dom */}
           <div className="flex w-full items-center">
-              <Link to="/" className="ml-auto mr-4 rounded-md bg-[#dc2625] px-4 duration-200 py-2 text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+              <Link
+                to="/" 
+                className="ml-auto mr-4 rounded-md bg-[#dc2625] px-4 duration-200 py-2 text-sm 
+                  font-medium text-white hover:bg-opacity-80 focus:outline-none 
+                  focus-visible:ring-2 focus-visible:ring-white"
+              >
                 Back
               </Link>
               <div className="mr-auto ml-4">

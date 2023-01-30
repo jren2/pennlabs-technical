@@ -114,7 +114,11 @@ const Description = (props : any) => {
                 {ngss &&
                   ngss.map((requirement: any) => {
                     return (
-                      <span key={`${selectedCourse}-${requirement.id}`} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                      <span 
+                        key={`${selectedCourse}-${requirement.id}`} 
+                        className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm 
+                          font-semibold text-gray-700 mr-2 mb-2"
+                      >
                         {requirement.id}
                       </span>
                     )

@@ -1,6 +1,9 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
+/**
+ * Receipt contains the component that shows the user their course cart once they have reordered it by preference.
+ */
 const Receipt = ({courses} : any) => {
   let [isOpen, setIsOpen] = useState(false)
 
@@ -14,16 +17,16 @@ const Receipt = ({courses} : any) => {
 
   return (
     <>
-      <div className="">
-        <button
-          type="button"
-          onClick={openModal}
-          className="rounded-md bg-[#55c193] px-4 py-2 duration-200 text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          Confirm
-        </button>
-      </div>
-
+      <button
+        type="button"
+        onClick={openModal}
+        className="rounded-md bg-[#55c193] px-4 py-2 duration-200 
+          text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none 
+          focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+      >
+        Confirm
+      </button>
+      {/* Modal transition */}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -37,7 +40,6 @@ const Receipt = ({courses} : any) => {
           >
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
-
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
@@ -49,7 +51,10 @@ const Receipt = ({courses} : any) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-md bg-white p-6 px-10 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel 
+                  className="w-full max-w-md transform overflow-hidden 
+                  rounded-md bg-white p-6 px-10 text-left align-middle shadow-xl transition-all"
+                >
                   <Dialog.Title
                     as="h3"
                     className="text-2xl text-center font-semibold leading-6 text-gray-900"
@@ -61,7 +66,7 @@ const Receipt = ({courses} : any) => {
                       Your cart has been successfully submitted:
                     </p>
                   </div>
-
+                  {/* Map the cart based on the order */}
                   {
                     courses !== undefined && 
                       courses.map((course : any) => (
@@ -73,12 +78,13 @@ const Receipt = ({courses} : any) => {
                         </>
                       ))
                   }
-      
-
+                  {/* Close modal to return to ordering */}
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent 
+                      bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       Return to cart

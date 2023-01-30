@@ -125,13 +125,38 @@ const Sidebar = (props : any) => {
               </div>
               {/* Change progress bar color based on quality */}
               <div className="grid grid-cols-2 py-4">
-                <Rating widthPercentage = {courseQualityPercentage} cartPercentage = {calculateAvgAttribute(courseQuality)} backgroundColor = {calculateColor(calculateAvgAttribute(courseQuality))} attribute = {"Course Quality"} ></Rating>
-                <Rating widthPercentage = {difficultyPercentage} cartPercentage = {calculateAvgAttribute(difficulty)} backgroundColor = {calculateColor(calculateAvgAttribute(difficulty))} attribute = {"Difficulty"} ></Rating>
-                <Rating widthPercentage = {workRequiredPercentage} cartPercentage = {calculateAvgAttribute(workRequired)} backgroundColor = {calculateColor(calculateAvgAttribute(workRequired))} attribute = {"Work Required"} ></Rating>
-                <Rating widthPercentage = {instructorQualityPercentage} cartPercentage = {calculateAvgAttribute(instructorQuality)} backgroundColor = {calculateColor(calculateAvgAttribute(instructorQuality))} attribute = {"Instructor"} ></Rating>
+                <Rating 
+                  widthPercentage = {courseQualityPercentage} 
+                  cartPercentage = {calculateAvgAttribute(courseQuality)} 
+                  backgroundColor = {calculateColor(calculateAvgAttribute(courseQuality))} 
+                  attribute = {"Course Quality"} 
+                />
+                <Rating 
+                  widthPercentage = {difficultyPercentage} 
+                  cartPercentage = {calculateAvgAttribute(difficulty)} 
+                  backgroundColor = {calculateColor(calculateAvgAttribute(difficulty))} 
+                  attribute = {"Difficulty"} 
+                />
+                <Rating 
+                  widthPercentage = {workRequiredPercentage} 
+                  cartPercentage = {calculateAvgAttribute(workRequired)} 
+                  backgroundColor = {calculateColor(calculateAvgAttribute(workRequired))} 
+                  attribute = {"Work Required"} 
+                />
+                <Rating 
+                  widthPercentage = {instructorQualityPercentage} 
+                  cartPercentage = {calculateAvgAttribute(instructorQuality)} 
+                  backgroundColor = {calculateColor(calculateAvgAttribute(instructorQuality))} 
+                  attribute = {"Instructor"} 
+                />
               </div>
               <div className="mx-auto w-full text-center">
-                <Link to="/checkout" state={{ courses }} className="bg-transparent w-1/2  duration-300 hover:bg-[#f1efe6] hover:text-black text-[#f1efe6] font-semibold py-2 px-4 border border-[#f1efe6] hover:border-transparent rounded">
+                <Link 
+                  to="/checkout" 
+                  state={{ courses }} 
+                  className="bg-transparent w-1/2  duration-300 hover:bg-[#f1efe6] hover:text-black text-[#f1efe6] 
+                    font-semibold py-2 px-4 border border-[#f1efe6] hover:border-transparent rounded"
+                >
                   Checkout
                 </Link>
               </div>

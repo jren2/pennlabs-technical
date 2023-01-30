@@ -55,7 +55,8 @@ const Courses = ({dispatchSetSelected, dispatchAddCourse, dispatchRemoveCourse, 
             {/* onChange, we want to filter the courses */}
             <input
               onChange={(e) => handleChange(e)}
-              className="block outline outline-1 outline-gray-50 focus:outline-gray-200 duration-150 p-4 pl-10 w-full text-sm text-gray-900 bg-[#f9fcff] rounded-sm focus:outline-1"
+              className="block outline outline-1 outline-gray-50 focus:outline-gray-200 
+                duration-150 p-4 pl-10 w-full text-sm text-gray-900 bg-[#f9fcff] rounded-sm focus:outline-1"
               placeholder="Filter courses by id, name or description"
               required
             />
@@ -77,7 +78,12 @@ const Courses = ({dispatchSetSelected, dispatchAddCourse, dispatchRemoveCourse, 
             .map(({ dept, number, title, description }) => {
               const course = `${dept}-${number}`
               return (
-                <div key={course} onClick={() => dispatchSetSelected(course)} className="cursor-pointer hover:bg-[#f5f7fa] duration-300 pl-4 pr-2 grid grid-cols-12 mt-2 w-full shadow-sm bg-[#f9fcff] rounded-sm  text-ellipses">
+                <div 
+                  key={course} 
+                  onClick={() => dispatchSetSelected(course)} 
+                  className="cursor-pointer hover:bg-[#f5f7fa] duration-300 pl-4 pr-2 grid grid-cols-12 
+                    mt-2 w-full shadow-sm bg-[#f9fcff] rounded-sm  text-ellipses"
+                >
                   <div className="col-span-11">
                     <div className="py-2">
                       <div className="font-medium tracking-wide text-lg">
@@ -91,7 +97,8 @@ const Courses = ({dispatchSetSelected, dispatchAddCourse, dispatchRemoveCourse, 
                     <button
                       onClick={() => addToCart({ id: course, title })}
                       type="button"
-                      className="col-span-1 text-black max-h-10 w-10 h-10 my-auto hover:text-gray-600 duration-150 font-medium rounded-full text-sm text-center inline-flex items-center "
+                      className="col-span-1 text-black max-h-10 w-10 h-10 my-auto hover:text-gray-600 duration-150 
+                        font-medium rounded-full text-sm text-center inline-flex items-center"
                     >
                       <CartAdd length={courseCart.length}></CartAdd>
                     </button>
@@ -101,7 +108,8 @@ const Courses = ({dispatchSetSelected, dispatchAddCourse, dispatchRemoveCourse, 
                     <button
                       onClick={() => dispatchRemoveCourse(course)}
                       type="button"
-                      className="col-span-1 text-green max-h-10 w-10 h-10 my-auto hover:text-gray-600 duration-150 font-medium rounded-full text-sm text-center inline-flex items-center "
+                      className="col-span-1 text-green max-h-10 w-10 h-10 my-auto hover:text-gray-600 duration-150 
+                      font-medium rounded-full text-sm text-center inline-flex items-center"
                     >
                       <CartRemove></CartRemove>
                     </button>
