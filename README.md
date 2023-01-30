@@ -52,16 +52,6 @@ My frontend technical for pennlabs!
 - When the user selects 2 courses, they will be compared with a circular progress bar
 - This displays the more desirable course based on the value of the attribute (green for more desirable, red for less)
 
-6. **Additional features**
-    
-    If you finish early, feel free to add an additional feature! Here are some ideas.
-    
-    - Let users rank courses in order of preference using a drag and drop menu
-    - Integrate data from the Penn Courses server
-        - Note that we added the line `"proxy": "[https://penncourseplan.com](https://penncourseplan.com/)"` to `package.json`. This proxy will allow you to make requests to the Penn Courses backend without running into CORS issues.
-        - The [“Retrieve Course” endpoint](https://penncourseplan.com/api/documentation/#tag/PCx-Course/operation/Retrieve%20Course) should have all the data you need to add information for a specific course, but you are welcome to use any endpoint that doesn’t require authentication.
-        - Tip: use semesters from Spring 2022 and earlier - they will have 3-digit course codes that match the `courses.json` data.
-        - Example:
 
 ## Tools used
 - Typescript
