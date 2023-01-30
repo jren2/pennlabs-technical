@@ -3,6 +3,7 @@ import { Reorder } from "framer-motion"
 import { motion } from "framer-motion"
 import { useLocation, Link } from 'react-router-dom'
 import Sort from "../icons/Sort"
+import Receipt from "./Receipt"
 
 /**
  * Checkout contains the component for the checkout page
@@ -45,8 +46,8 @@ const Checkout = () => {
         </div>
       ) : (
         <div className="mx-40">
-          <div className="py-8 mb-2 w-full text-center text-3xl font-bold">Your Checked Out Cart: </div>
-          <p className="text-center my-4">You can rank courses by dragging and dropping</p>
+          <div className="pt-8 pb-4 w-full text-center text-3xl font-bold">Your Checked Out Cart: </div>
+          <p className="text-center mb-8">Rank your courses by preferences by dragging and dropping or sorting by feature!</p>
           {/* Header for the attributes inside of the course cart */}
           <div className="relative">
             <div className="flex justify-evenly shadow-md py-4 px-0 bg-white rounded-sm w-[54vw] m-auto">
@@ -110,10 +111,13 @@ const Checkout = () => {
             </Reorder.Group>
           </div>
           {/* Return to homepage button - this maintains state due to react router dom */}
-          <div className="mx-auto w-full text-center">
-            <Link to="/" className="bg-transparent w-1/2 duration-200 hover:bg-slate-100 text-black font-medium py-2 px-4 border border-black rounded">
-              Return to homepage
-            </Link>
+          <div className="flex w-full items-center">
+              <Link to="/" className="ml-auto mr-4 rounded-md bg-[#dc2625] px-4 duration-200 py-2 text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                Back
+              </Link>
+              <div className="mr-auto ml-4">
+                <Receipt courses={courseArray}></Receipt>
+              </div>
           </div>
         </div> 
       )}
